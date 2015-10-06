@@ -1,0 +1,17 @@
+{
+  "name": "mrswift",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mrswiftcompany/mrswift",
+  "authors": [
+    "Igor Vieira <igorpereiraramosvieira@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ]
+}
