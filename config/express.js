@@ -40,11 +40,11 @@ module.exports = function(){
 		app.use(helmet.hidePoweredBy({setTo:'PHP 5.5.14'}));
 
 
-		load('models',{cwd:'app'})
-			.then('controllers')
-			.then('models')
-			.then('routes')
-			.into(app);
+		//load('models',{cwd:'app'})
+		//	.then('controllers')
+		//	.then('models')
+		//	.then('routes')
+		//	.into(app);
 
 		// app.get('*', function(req,res){
 		// 	res.status(404).render('404');
