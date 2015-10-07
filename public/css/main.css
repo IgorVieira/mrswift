@@ -108,7 +108,7 @@ hr{
 	float: left;
 	text-align: left;
 	font-size: 1rem;
-	margin-left: 2em;
+	margin-left: 8.2em;
 }
 /*########################### NAVBAR-END ###################################*/
 
@@ -345,7 +345,7 @@ textarea {
 	cursor: pointer;
 	position:fixed;
 	bottom: 3.5em;
-	right: 1em;;
+	right: 3.5em;
 	display: none;
 	z-index: 50;
 	background-color: #2C3D51;
