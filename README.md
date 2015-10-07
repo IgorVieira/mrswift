@@ -3,9 +3,9 @@ MrSwift front-page!
 
 ### Before
 #####Download for Windows
-- Nodejs
-- GitHub
-- git
+- [Nodejs](https://nodejs.org/en/) 
+- [GitHub](https://desktop.github.com/)
+- [git ](http://git-scm.com/download/win) 
 
 
 
