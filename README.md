@@ -1,4 +1,4 @@
-# mrswift
+# Mr.Swift
 MrSwift front-page!
 
 ### Before
@@ -12,8 +12,8 @@ MrSwift front-page!
 
 
 
-### Usage
-
+### Usage for Windows
+#### After you have downloaded the tools open your Github desktop platform and clone the repository to the folder where your projects
 
 
 ```
