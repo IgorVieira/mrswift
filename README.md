@@ -11,6 +11,7 @@ MrSwift front-page!
 
 ### Pré-instalação de alguns componentes:
 É necessário instalar o gulp como módulo global para automatizar algumas tarefas
+abra o terminal do git e digite o seguinte comando
 ![github](https://github.com/mrswiftcompany/mrswift/blob/master/image/github.png)
 
 
