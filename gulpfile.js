@@ -1,12 +1,14 @@
-/*'use strict'
+'use strict'
 
 let gulp = require('gulp')
 let stylus = require('gulp-stylus')
 
 gulp.task('stylus', () => {
-  gulp.src('public/css/main.styl')
-    .pipe(stylus({linenos: true}))
-    .pipe(gulp.dest('./css/build'));
+  gulp.src('public/css/*.styl')
+    .pipe(stylus({
+      compress: false
+    }))
+    .pipe(gulp.dest('public/css/module'));
 });
 
 gulp.task('watch', ()=> {
@@ -15,4 +17,3 @@ gulp.task('watch', ()=> {
 
 
 gulp.task('default',['watch']);
-*/
