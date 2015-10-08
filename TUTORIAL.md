@@ -15,7 +15,7 @@ abra o terminal do git e digite o seguinte comando
 
 
 
-![github](https://github.com/mrswiftcompany/mrswift/blob/master/image/github.png)
+![github](https://github.com/mrswiftcompany/mrswift/blob/master/images/github.png)
 
 
 
@@ -27,11 +27,11 @@ abra o terminal do git e digite o seguinte comando
 
 ### Uso para o Windows
 Após fazer o download das ferramentas acima, abra a plataforma desktop do GitHub e clone essa pasta para o seu repositório local
-![github1](https://github.com/mrswiftcompany/mrswift/blob/master/image/github1.png)
+![github1](https://github.com/mrswiftcompany/mrswift/blob/master/images/github1.png)
 
 Em seguinda abra o terminal e caminhe a até a pasta onde está clonado o repositório, no meu caso:
 - Documentos/GitHub/mrswift
-![github2](https://github.com/mrswiftcompany/mrswift/blob/master/image/github2.png)
+![github2](https://github.com/mrswiftcompany/mrswift/blob/master/images/github2.png)
 
 Por fim, dentro do repositório digite:
 
