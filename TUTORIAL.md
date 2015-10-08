@@ -40,12 +40,4 @@ npm install
 bower install
 npm start
 ```
-### Uso em Linux(Ubuntu)
 
-```
-git clone git@github.com:mrswiftcompany/mrswift.git
-cd /mrswift
-npm install
-bower install
-npm start
-```
