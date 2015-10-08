@@ -1,4 +1,6 @@
-var express =  require('express')
+'use strict'
+
+let express =  require('express')
 	,load	= require('express-load')
 	,bodyParser =  require('body-parser')
 	,cookieParser = require('cookie-parser')
@@ -9,9 +11,9 @@ var express =  require('express')
 
 //Environment setup
 
-module.exports = function(){
+module.exports = () => {
 	
-	var app = express();
+	let app = express();
 
 		app.set('port',3000);
 
@@ -20,12 +22,12 @@ module.exports = function(){
 		app.set('views','./app/views');		
 		app.use(cookieParser());		
 		app.use(session(
-			{
-				secret:'Aph@lbe_Met0re',
-				resave:true,
-				saveUnitialized:true
-			}
-		));
+		{
+			secret:'The Machine',
+			resave:true,
+			saveUninitialized:true
+		}
+	));
 
 		app.use(bodyParser.urlencoded({extended:true}));
 		app.use(bodyParser.json());
@@ -38,6 +40,8 @@ module.exports = function(){
 		app.use(helmet.nosniff());
 		app.disable('x-power-by');
 		app.use(helmet.hidePoweredBy({setTo:'PHP 5.5.14'}));
+
+
 
 
 		load('models',{cwd:'app'})
