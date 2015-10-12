@@ -5,7 +5,7 @@
 
 
 
-  describe('GET /user', ()=>{
+  describe('GET home page o/', ()=>{
 
 
 

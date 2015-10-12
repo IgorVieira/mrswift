@@ -15,7 +15,9 @@
     "tests"
   ],
   "dependencies": {
+    "angular": "1.4.4",
+    "angular-route": "1.4.4",
     "materialize": "0.97.1",
-    "angular": "1.4.4"
+    "angular-resource": "1.4.4"
   }
 }
