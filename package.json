@@ -23,9 +23,10 @@
     "ejs": "^2.3.4",
     "express": "4.13.3",
     "express-load": "1.1.15",
-    "express-session": "1.11.3",    
+    "express-session": "1.11.3",
     "helmet": "0.12.0",
-    "method-override": "2.3.5"
+    "method-override": "2.3.5",
+    "mongoose": "3.8.31"
   },
   "devDependencies": {
     "gulp": "3.9.0",
