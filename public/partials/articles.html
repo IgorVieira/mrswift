@@ -1,0 +1,30 @@
+<h3 class="center">Mr.Swift - Blog</h3>
+<div class="container">
+    
+	<form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="Buscar..." id="nome" type="text" ng-model="look" class="validate">
+              <label for="nome">Buscar:</label>
+            </div>
+            
+        </form>
+    
+</div>
+<div class="container">
+	<div class="row">
+		<ul>
+		<li class="center" ng-repeat="article in articles | filter:look">
+			
+			<a  class="red-text text-lighten-2" ng-href="#/article/{{article._id}}">
+				<h4 >{{article.title}}</h4>
+			</a>
+			<p>{{article.description}}</p>
+			<p>{{article.author}}</p>
+			<p>{{article.data}}</p>
+
+
+		</li>
+	</ul>
+	</div>
+</div>
