@@ -1,33 +1,34 @@
- var articles = [ 
-   {    
-       _id: 1,    
-       title:'Uns jovens que resolveram empreender', 
-       text:'Jean shorts four dollar toast Neutra, tofu ethical keytar gentrify skateboard. Tilde try-hard cronut cardigan. Food truck organic meggings pork belly, umami migas gastropub Etsy. Bitters hashtag listicle, Intelligentsia pour-over plaid tote bag narwhal Carles sriracha Austin mumblecore freegan twee. Tote bag four loko you probably havent heard of them banjo irony Godard distillery, listicle deep v blog bicycle rights 90s. Meggings tote bag Echo Park, vegan brunch taxidermy flexitarian pug. Bicycle rights lumbersexual disrupt, tattooed next level blog organic mustache gentrify Pitchfork whatever irony sustainable iPhone.',    
-      author: 'Autor Exemplo 1', 
-       data:'09/10/2015'   
-       
-     },      
-  {    
-      _id: 2,    
-       title:'Solucoes com qualidade acima de tudo', 
-      text:'Jean shorts four dollar toast Neutra, tofu ethical keytar gentrify skateboard. Tilde try-hard cronut cardigan. Food truck organic meggings pork belly, umami migas gastropub Etsy. Bitters hashtag listicle, Intelligentsia pour-over plaid tote bag narwhal Carles sriracha Austin mumblecore freegan twee. Tote bag four loko you probably havent heard of them banjo irony Godard distillery, listicle deep v blog bicycle rights 90s. Meggings tote bag Echo Park, vegan brunch taxidermy flexitarian pug. Bicycle rights lumbersexual disrupt, tattooed next level blog organic mustache gentrify Pitchfork whatever irony sustainable iPhone.',    
-       author: 'Autor Exemplo 2',   
-       data:'10/10/2015'    
-         
-     },   
-   {    
-       _id: 3,    
-      title:'De clientes a parceiros',   
-       text:'Jean shorts four dollar toast Neutra, tofu ethical keytar gentrify skateboard. Tilde try-hard cronut cardigan. Food truck organic meggings pork belly, umami migas gastropub Etsy. Bitters hashtag listicle, Intelligentsia pour-over plaid tote bag narwhal Carles sriracha Austin mumblecore freegan twee. Tote bag four loko you probably havent heard of them banjo irony Godard distillery, listicle deep v blog bicycle rights 90s. Meggings tote bag Echo Park, vegan brunch taxidermy flexitarian pug. Bicycle rights lumbersexual disrupt, tattooed next level blog organic mustache gentrify Pitchfork whatever irony sustainable iPhone.',    
-       author: 'Autor Exemplo 3',   
-       data:'13/10/2015'    
-        
-     }    
+/*
+ var articles = [
+   {
+       _id: 1,
+       title:'Uns jovens que resolveram empreender',
+       text:'Jean shorts four dollar toast Neutra, tofu ethical keytar gentrify skateboard. Tilde try-hard cronut cardigan. Food truck organic meggings pork belly, umami migas gastropub Etsy. Bitters hashtag listicle, Intelligentsia pour-over plaid tote bag narwhal Carles sriracha Austin mumblecore freegan twee. Tote bag four loko you probably havent heard of them banjo irony Godard distillery, listicle deep v blog bicycle rights 90s. Meggings tote bag Echo Park, vegan brunch taxidermy flexitarian pug. Bicycle rights lumbersexual disrupt, tattooed next level blog organic mustache gentrify Pitchfork whatever irony sustainable iPhone.',
+      author: 'Autor Exemplo 1',
+       data:'09/10/2015'
+
+     },
+  {
+      _id: 2,
+       title:'Solucoes com qualidade acima de tudo',
+      text:'Jean shorts four dollar toast Neutra, tofu ethical keytar gentrify skateboard. Tilde try-hard cronut cardigan. Food truck organic meggings pork belly, umami migas gastropub Etsy. Bitters hashtag listicle, Intelligentsia pour-over plaid tote bag narwhal Carles sriracha Austin mumblecore freegan twee. Tote bag four loko you probably havent heard of them banjo irony Godard distillery, listicle deep v blog bicycle rights 90s. Meggings tote bag Echo Park, vegan brunch taxidermy flexitarian pug. Bicycle rights lumbersexual disrupt, tattooed next level blog organic mustache gentrify Pitchfork whatever irony sustainable iPhone.',
+       author: 'Autor Exemplo 2',
+       data:'10/10/2015'
+
+     },
+   {
+       _id: 3,
+      title:'De clientes a parceiros',
+       text:'Jean shorts four dollar toast Neutra, tofu ethical keytar gentrify skateboard. Tilde try-hard cronut cardigan. Food truck organic meggings pork belly, umami migas gastropub Etsy. Bitters hashtag listicle, Intelligentsia pour-over plaid tote bag narwhal Carles sriracha Austin mumblecore freegan twee. Tote bag four loko you probably havent heard of them banjo irony Godard distillery, listicle deep v blog bicycle rights 90s. Meggings tote bag Echo Park, vegan brunch taxidermy flexitarian pug. Bicycle rights lumbersexual disrupt, tattooed next level blog organic mustache gentrify Pitchfork whatever irony sustainable iPhone.',
+       author: 'Autor Exemplo 3',
+       data:'13/10/2015'
+
+     }
  ];
 
 module.exports = function() {
   var controller = {};
-  
+
 
 
 
@@ -45,8 +46,8 @@ module.exports = function() {
     var article = articles.filter(function(article) {
       return article._id == idArticle;
     })[0];
-    article ? 
-    res.json(article) : 
+    article ?
+    res.json(article) :
     res.status(404).send('Artigo não encontrado');
   };
 
@@ -57,3 +58,49 @@ module.exports = function() {
 
   return controller;
 };
+*/
+
+
+var sanitize =  require('mongo-sanitize');
+
+
+module.exports = function(app){
+
+
+
+	var Article = app.models.article;
+
+	var controller = {};
+
+	controller.listArticles = function(req,res){
+			Article.find().exec()
+				.then(
+					function(articles){
+						res.json(articles);
+				},
+				function(erro){
+					console.error(erro)
+					res.status(500).json(erro);
+				}
+		);
+	};
+
+
+  controller.getArticle = function(req, res){
+    var _id = req.params.id;
+    Article.findById(_id).exec()
+    .then(
+      function(article){
+        if (!article) throw new Error("CONTATO NÃO encontrado");
+        res.json(article)
+      },
+      function(erro){
+        console.log(erro);
+        res.status(404).json(erro);
+      }
+    );
+  };
+
+
+	return controller;
+}
