@@ -11,7 +11,7 @@ let express =  require('express')
 
 //Environment setup
 
-module.exports = () => {
+module.exports = function(){
 	
 	let app = express();
 
