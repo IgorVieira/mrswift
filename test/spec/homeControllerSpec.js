@@ -13,10 +13,22 @@ describe("homeController", function(){
 
 
 
-	it('Deve criar um contato vazio quando nenhum parametro de rota for passado',
+	it('Must create a Contact Empty When no parameter route to Past',
 		inject(function($controller){
 
 			$controller('homeController',{"$scope":$scope})
 			expect($scope.contact._id).toBeUndefined();
-  }))
-})
+  }));
+
+	it('Must create a Contact When parameter route to Past',
+		inject(function($controller){
+
+			$controller('homeController',{
+				'$routeParams':{contactId:1},
+				'$scope':$scope
+				})
+			expect($scope.contact._id).toBeUndefined();
+	}));
+
+
+});
