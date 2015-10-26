@@ -5,3 +5,9 @@ notifications:
 - igor.p.r.vieira@gmail.com
 services:
 - mongodb
+before_install:
+  - npm install -g bower@1.3
+  - npm install -g grunt-cli@0.1
+before_script:
+  - grunt
+  - cd dist
