@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- 0.1
+- 0.10
 notifications:
 - igor.p.r.vieira@gmail.com
 services:
@@ -8,5 +8,11 @@ services:
 before_install:
   - npm install -g bower@1.3
   - npm install -g grunt-cli@0.1
+  - npm install -g karma-cli@0.0
+  - npm install -g protractor@1.5
+  - webdriver-manager update
 before_script:
   - grunt
+  - cd dist
+script:
+  -karma start config/karma.config.js --single-run --browser PhantomJS
