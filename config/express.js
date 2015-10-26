@@ -1,6 +1,6 @@
 'use strict'
 
-let express =  require('express')
+var express =  require('express')
 	,load	= require('express-load')
 	,bodyParser =  require('body-parser')
 	,cookieParser = require('cookie-parser')
@@ -12,15 +12,15 @@ let express =  require('express')
 //Environment setup
 
 module.exports = function(){
-	
-	let app = express();
+
+var app = express();
 
 		app.set('port',3000);
 
-		app.use(express.static('./public'));		
-		app.set('view engine','ejs');		
-		app.set('views','./app/views');		
-		app.use(cookieParser());		
+		app.use(express.static('./public'));
+		app.set('view engine','ejs');
+		app.set('views','./app/views');
+		app.use(cookieParser());
 		app.use(session(
 		{
 			secret:'The Machine',
