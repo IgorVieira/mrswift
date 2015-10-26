@@ -7,7 +7,7 @@ angular.module('mrswift').controller('homeController',
 					$scope.user = user;
 				},
 				function(error) {
-					$scope.msg = {
+					$scope.message = {
 					  text: 'Error! :/.'
 					};
 				}
@@ -19,11 +19,11 @@ angular.module('mrswift').controller('homeController',
 		$scope.saveContact = function() {
 		  $scope.contact.$save()
 		  	.then(function() {
-		  		$scope.msg = {text: 'Recebemos sua mensgem =]'};
+		  		$scope.message = {text: 'Recebemos sua mensgem =]'};
 		  		$scope.contact = new Contact();
 		  	})
 		  	.catch(function(erro) {
-		  		$scope.msg = {text: 'You fail in this page! '};
+		  		$scope.message = {text: 'You fail in this page! '};
 		  	});
 		};
 
