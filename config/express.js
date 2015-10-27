@@ -1,11 +1,12 @@
 'use strict'
 
 var express =  require('express')
-	,load	= require('express-load')
-	,bodyParser =  require('body-parser')
-	,cookieParser = require('cookie-parser')
-	,session = require('express-session')
-	,helmet = require('helmet');
+	, load	= require('express-load')
+	, bodyParser =  require('body-parser')
+	, cookieParser = require('cookie-parser')
+	, session = require('express-session')
+	, error = require('../middlewares/error')
+	, helmet = require('helmet');
 
 
 
@@ -23,7 +24,7 @@ var app = express();
 		app.use(cookieParser());
 		app.use(session(
 		{
-			secret:'The Machine',
+			secret:'@the_tru3-m@cHine',
 			resave:true,
 			saveUninitialized:true
 		}
@@ -50,9 +51,8 @@ var app = express();
 			.then('routes')
 			.into(app);
 
-		app.get('*', function(req,res){
-			res.status(404).render('404');
-		});
+		app.use(error.notFound);
+		app.use(error.serverError);
 
  return app;
 
