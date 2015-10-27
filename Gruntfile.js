@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     },
 
     usemin : {
-      html: 'dist/app/views/**/*.ejs'
+      html: 'dist/app/views/**/*.jade'
     },
 
     useminPrepare: {
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         root: 'dist/public',
         dest: 'dist/public'
       },
-      html: 'dist/app/views/**/*.ejs'
+      html: 'dist/app/views/**/*.jade'
     },
 
     ngAnnotate: {
