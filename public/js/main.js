@@ -1,4 +1,4 @@
-angular.module('mrswift',['ngRoute', 'ngResource'])
+angular.module('mrswift',['ngRoute', 'ngResource','components'])
 	.config(function($routeProvider){
 
 
