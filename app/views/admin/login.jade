@@ -1,0 +1,21 @@
+
+h1 Log Into Your Account
+
+if error
+p ERROR: #{error}
+
+form(method="post")
+input(type="hidden", name="_csrf", value=csrfToken)
+
+span Email:
+input(type="email", name="email", required=true, value="email", id="email")
+br
+br
+span Password:
+input(type="password", name="password", required=true, value="password", id="password")
+br
+
+input(type="submit" value="login" name="login")
+br
+br
+<a href="/register">Register</a>
