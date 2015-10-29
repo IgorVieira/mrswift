@@ -26,7 +26,8 @@ var app = express();
 		{
 			secret:'@the_tru3-m@cHine',
 			resave:true,
-			saveUninitialized:true
+			saveUninitialized:true,
+			cookie: { maxAge: 60000 }
 		}
 	));
 

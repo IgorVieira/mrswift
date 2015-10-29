@@ -1,21 +1,26 @@
+extends layout
 
-h1 Log Into Your Account
+block vars
+  - var title = 'Login'
 
-if error
-p ERROR: #{error}
+block body
+  h1 Log Into Your Account
 
-form(method="post")
-input(type="hidden", name="_csrf", value=csrfToken)
+  if error
+    p #{error}
 
-span Email:
-input(type="email", name="email", required=true, value="email", id="email")
-br
-br
-span Password:
-input(type="password", name="password", required=true, value="password", id="password")
-br
+  form(method="post")
+    input(type="hidden", name="_csrf", value=csrfToken)
 
-input(type="submit" value="login" name="login")
-br
-br
-<a href="/register">Register</a>
+    span Email:
+    input(type="email", name="email", required=true, placeholder="digite seu email", id="email")
+    br
+    br
+    span Password:
+    input(type="password", name="password", required=true, placeholder="digite sua senha", id="password")
+    br
+
+    input(type="submit" value="login" name="login")
+    br
+    br
+    <a href="/register">Register</a>

@@ -1,4 +1,6 @@
 module.exports = function(app){
 	var controller =  app.controllers.register;
-	app.get('/register', controller.register);
+	app.route('/register')
+		.get(controller.register)
+		.post(controller.registerUser);
 }
