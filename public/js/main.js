@@ -7,7 +7,7 @@ angular.module('mrswift',['ngRoute', 'ngResource','components'])
 			,controller:'homeController'
 		});
 
-		/*
+
 		$routeProvider.when('/articles',{
 			templateUrl:'partials/articles.html',
 			controller:'articlesController'
@@ -17,7 +17,7 @@ angular.module('mrswift',['ngRoute', 'ngResource','components'])
 			templateUrl:'partials/article.html',
 			controller:'articleController'
 		});
-		*/
+	
 
 		$routeProvider.otherwise({redirectTo:'/home'})
 
